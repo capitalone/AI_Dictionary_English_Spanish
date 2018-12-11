@@ -13,7 +13,7 @@ The **format** of each entry follows;
 
 - [ ] **Concept** [Translation] -*type* Simple explanation of the technical term. Second level of detail for this concept.
 
-
+  
 This work is distributed under [The Creative Commons license](https://creativecommons.org/licenses/by/4.0/legalcode) to give other people the right to share, use, and build upon this work 
 
 Hope you find it useful. 

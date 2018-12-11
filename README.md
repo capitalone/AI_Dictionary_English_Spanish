@@ -28,3 +28,25 @@ This work is licensed under the Creative Commons Attribution 4.0 International L
 <p align="left">
   <img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png" width="88" height="31">
 </p>
+
+
+## Contributors
+
+We welcome Your interest in Capital One’s Open Source Projects (the
+“Project”). Any Contributor to the Project must accept and sign an
+Agreement indicating agreement to the license terms below. Except for
+the license granted in this Agreement to Capital One and to recipients
+of software distributed by Capital One, You reserve all right, title,
+and interest in and to Your Contributions; this Agreement does not
+impact Your rights to use Your own Contributions for any other purpose.
+
+[Sign the Individual Agreement](https://docs.google.com/forms/d/19LpBBjykHPox18vrZvBbZUcK6gQTj7qv1O5hCduAZFU/viewform)
+
+[Sign the Corporate Agreement](https://docs.google.com/forms/d/e/1FAIpQLSeAbobIPLCVZD_ccgtMWBDAcN68oqbAJBQyDTSAQ1AkYuCp_g/viewform?usp=send_form)
+
+
+## Code of Conduct
+
+This project adheres to the [Open Code of Conduct](https://developer.capitalone.com/single/code-of-conduct)
+By participating, you are
+expected to honor this code.

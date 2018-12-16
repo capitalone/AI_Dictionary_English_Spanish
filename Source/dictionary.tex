@@ -141,23 +141,23 @@ Actualmente la Inteligencia Artificial (IA) recibe influencia de diversos campos
 \ditem{Back Propagation} [Retro-propagación] \textit{-n.}  Es una técnica de optimización matemática que se utiliza para entrenar una red neuronal. Este algoritmo empieza por calcular el error en la capa de salida de la red y luego propaga esta información hacia las capas anteriores utilizando la regla de la cadena sobre cada capa (ref. Chain Rule).  
 
 La técnica Gradient Descent (ref. Gradient Descent) utiliza \textit{back propagation} para actualizar los pesos de una red neuronal con un vector llamado gradiente, el cual comúnmente corresponde a la primera derivada de la función de costo con respecto a sus pesos. El  valor y dirección de la gradiente guía la optimización de los pesos hacia el valor máximo de la función de costo. Debido a que \textit{back propagation} tiene como objetivo reducir la noción de error (\textit{loss function}) en el sistema, los pesos se actualizan con el valor negativo de la gradiente.
-\ditem{Bias} [Prejuicio] \textit{-n.}  Un algoritmo de aprendizaje supervisado muestra un alto \textit{bias} cuando predice incorrectamente, y de forma frecuente, resultados incorrectos para cierta clase de observaciones. 
+\ditem{Bias} [Sesgo/Prejuicio] \textit{-n.}  Un algoritmo de aprendizaje supervisado muestra un alto \textit{bias} cuando predice de forma frecuente resultados incorrectos para cierta clase de observaciones. 
 
-Note que existe un balance entre el \textit{bias} y el \textit{variance} al momento de diseñar la solución a un problema de aprendizaje supervisado. 
+Existe un balance entre el \textit{bias} y el \textit{variance} (ref. Variance) al momento de diseñar la solución a un problema de aprendizaje supervisado: un algoritmo con poca capacidad (ref. Capacity) puede ser poco flexible al aprender un número pequeño de interacciones en los datos de entrenamiento, mostrando así un alto \textit{bias} y un menor \textit{variance}. 
 
-Un algoritmo con poca capacidad (ref. Capacity) puede llegar a ser poco flexible al sólo aprender un pequeño número de interacciones en los datos, mostrando así un alto \textit{bias} y un menor \textit{variance}. Por el contrario, un algoritmo con alta capacidad puede llegar a ser demasiado flexible, al aprender interacciones complejas en distintas regiones del espacio de datos de entrenamiento, comportándose de forma distinta con diferentes datasets de entrenamiento y mostrando un bajo \textit{bias}, pero con un alto \textit{variance}. 
+Por el contrario, un algoritmo con alta capacidad puede llegar a ser demasiado flexible al aprender interacciones complejas en distintas regiones del espacio de los datos e incluso aprender el ruido presente en los datos de entranamiento. El resultado es que el modelo se comporta de forma distinta con diferentes \textit{datasets}, mostrando un bajo \textit{bias} pero un alto \textit{variance}. 
 
 \section{C}
 \ditem{Capacity} [Capacidad] \textit{-n.} Es un valor numérico que mide la complejidad de un modelo para reconocer la presencia de distintas clases en los datos. Dicha complejidad obedece a las interacciones entre las variables de entrada, latentes, y de salida que componen un modelo. Mientras más grande sea la capacidad, el modelo puede aproximar funciones más complejas y no-lineales. 
 
 En redes neuronales, la capacidad es comúnmente proporcional al número de pesos que exhibe su arquitectura y los cuales representan los parámetros entrenables del modelo . 
 
-Una medida más teórica de la capacidad es el \textit{VC dimension} (ref. VC Dimension), la cual mide el número máximo de observaciones que un clasificador puede asignarles etiquetas de forma correcta.   
+Una medida más teórica de la capacidad es el \textit{VC Dimension} (ref. VC Dimension), la cual mide el número máximo de observaciones que un clasificador puede asignarles etiquetas de forma correcta.   
 \ditem{Convergence} [Convergencia] \textit{-n.}  Es un estado de estabilidad dentro del proceso de entrenamiento de un modelo de aprendizaje automático. 
 
 Podemos observar convergencia cuando  la diferencia entre los valores sucesivos de la función de costo es casi constante, el ciclo de entrenamiento alcanza un máximo número de pasos, o las funciones de costo de los datos de entrenamiento y validación dejan de disminuir de forma conjunta. Muchas veces seguir entrando a partir del punto de convergencia conduce al modelo  a aprender el ruido presente en los datos de entrenamiento y  generar \textit{overfiting}.
-\ditem{Convolution} [Convolucion] \textit{-n.} Es una operación matemática entre dos señales $f$ y $g$ que expresa la transformación de $f$ cuando se le desplaza por encima $g$. 
-Por ejemplo, imagine los pixeles de un imagen $f$ que contiene el rostro de una persona y un conjunto de pesos $g$ de una red neuronal que multiplica partes consecutivas de la imagen con el objetivo de  calcular similaridades en toda la señal. El resultado es la convolución ($f*g$) y consiste en una secuencia de valores que expresan que partes del rostro reaccionan más a la señal $g$, resaltando en este proceso esquinas, bordes, texturas, y otras características (ref. Feature Vector). 
+\ditem{Convolution} [Convolución] \textit{-n.} Es una operación matemática entre dos señales $f$ y $g$ que expresa la transformación de $f$ cuando se le desplaza por encima $g$. 
+Por ejemplo, imagine los pixeles de un imagen $f$ que contiene el rostro de una persona y un conjunto de pesos $g$ de una red neuronal que multiplica partes consecutivas de la imagen con el objetivo de  calcular similaridades en toda la señal. El resultado es la convolución ($f*g$) y consiste en una secuencia de valores que expresan que partes del rostro reaccionan más a la señal $g$, resaltando en este proceso esquinas, bordes, texturas, y otras características (ref. Feature). 
 
 Note que la convolución anterior  recibe datos de entrada en dos dimensiones en la función $f$, mas es muy frecuente usar también señales unidimensionales, como por ejemplo en el análisis de series de tiempo. 
 
@@ -166,23 +166,23 @@ Si los datos son discretos, es posible acelerar el calculo de la convolución me
 
 Este modelo ha sido inspirado por el trabajo de Hubel y Wiesel en procesamiento de información en el córtex visual, en donde se manifiesta los beneficios de explotar las correlaciones espaciales en imágenes. Esto añade robustez a las transformaciones tales como cambios de orientación y escala.
 \section{D}
-\ditem{Dataset} \textit{-n.} Es una colección de datos u observaciones relacionadas a un problema determinado. Ejemplos conocidos incluyen una colección de imágenes que contienen objetos frecuentes (\textit{ImageNet dataset}), las noticias de una agencia internacional (\textit{Reuters-21578 dataset}), una lista de canciones (\textit{1 Milion Songs dataset}), o las preferencias de varios usuarios sobre determinadas películas (\textit{Netflix dataset}). El dataset más conocido en algoritmos de aprendizaje profundo (ref. Deep Learning) es ImageNet y consiste de más de un millón de observaciones, categorizadas en 1000 tipos de objetos. 
+\ditem{Dataset} \textit{-n.} Es una colección de datos u observaciones relacionadas a un problema determinado. Ejemplos conocidos incluyen una colección de imágenes que contienen objetos frecuentes (\textit{ImageNet dataset}), las noticias de una agencia internacional (\textit{Reuters-21578 dataset}), una lista de canciones (\textit{1 Million Songs dataset}), o las preferencias de varios usuarios sobre determinadas películas (\textit{Netflix dataset}). El \textit{dataset} más conocido en algoritmos de aprendizaje profundo (ref. Deep Learning) es \textit{ImageNet} y consiste de más de un millón de observaciones, categorizadas en 1000 tipos de objetos. 
 
 
 Cuando el dataset se almacena en una matriz, las columnas representan los diferentes atributos de un problema (ref. Feature) y las filas representan los vectores de atributos u observaciones de distintas instancias del problema (ref. Feature Vector).  
 
 Para datos textuales, al dataset también se le denomina \textit{corpus}. 
 
-%\ditem{Data Science} [Ciencia de Datos] \textit{-v.} 
+%\ditem{Data Science} [Ciencia de Datos] \textit{-n.} 
 \ditem{Deep Neural Networks} [Redes Neuronales Profundas] \textit{-n.} Son redes neuronales que contiene más de una capa escondida, lo cual incrementa la capacidad del modelo para aproximar funciones más complejas (Ref. Capacity). 
 
 El éxito actual de las redes neuronales profundas radica en aplicar optimización basada en gradientes (Ref. Gradients) a modelos profundos que tienen una gran capacidad para identificar distintas interacciones en los datos de entrada (patrones). De esta manera, la arquitectura del modelo es proporcional a su desempeño, si se le alimenta con una gran cantidad de información y muestra una capacidad adecuada.
-\ditem{Deep Learning} [Aprendizaje Profundo] \textit{-v.} Es una técnica de aprendizaje automático basado en redes neuronales profundas (ref. Deep Neural Networks) que tiene la propiedad de aprender características o \textit{features} durante su proceso de entrenamiento. Esto la diferencia de otras técnicas de aprendizaje automático que requieren una selección de características manual o automatizada por propiedades estadísticas. 
+\ditem{Deep Learning} [Aprendizaje Profundo] \textit{-n.} Es una técnica de aprendizaje automático basado en redes neuronales profundas (ref. Deep Neural Networks) que tiene la propiedad de aprender características o \textit{features} durante su proceso de entrenamiento. Esto la diferencia de otras técnicas de aprendizaje automático que requieren una selección de características manual o automatizada por propiedades estadísticas. 
 
-La clasificación realizada por un algoritmo de deep learning muestra un mejor rendimiento debido a que encuentra de forma iterativa el espacio matemático en donde la función de perdida (ref. Loss Function) se minimiza. 
+La clasificación realizada por un algoritmo de \textit{deep learning} muestra un mejor rendimiento debido a que encuentra de forma iterativa el espacio matemático en donde la función de perdida (ref. Loss Function) se minimiza. 
 
-La capacidad del algoritmo para recordar patrones se relaciona directamente con su arquitectura. Por ejemplo, patrones espaciales como texturas en imágenes pueden ser aprendidos por una red neuronal profunda llamada \textit{Convolutional Neural Network} (CNN), patrones temporales que muestran dependencias estadísticas en los datos de entrada como la voz  humana o las palabras en un \textit{tweet} suelen ser aprendidas con una red neuronal llamada Long Short-Term Memory (LSTM), y reconstrucciones de los datos de entrada con el fin de comprimir la información o segmentarla se representan con \textit{Variational Auto Encoders} (VAE).  
-%\ditem{Deep Reinforcement Learning} \textit{-v.}  
+La capacidad del algoritmo para recordar patrones se relaciona directamente con su arquitectura. Por ejemplo, patrones espaciales como texturas en imágenes pueden ser aprendidos por una red neuronal profunda llamada \textit{Convolutional Neural Network} (CNN), patrones temporales que muestran dependencias estadísticas en los datos de entrada como la voz  humana o las palabras en un \textit{tweet} suelen ser aprendidas con una red neuronal llamada \textit{Long Short-Term Memory} (LSTM), y reconstrucciones de los datos de entrada con el fin de comprimir la información o segmentarla se representan con \textit{Variational Auto Encoders} (VAE).  
+%\ditem{Deep Reinforcement Learning} \textit{-n.}  
 \section{E}
 %\ditem{Expected Return} \textit{-n.} . 
 \ditem{Entropy} [Entropia] \textit{-n.}  Es una medida de información que indica el grado de desorden en un conjunto o la cantidad de ruido en una señal. En teoría de la información, la entropía se mide en \textit{bits} y representa el porcentaje de información generado por un proceso estocástico (refer. Stochastic). 
@@ -197,7 +197,7 @@ El concepto de entropía en la información fue introducido por Claude Shannon e
 
 %\ditem{Exploration} [Exploración] \textit{-n.} 
 %\ditem{Explotation} [Explotación] \textit{-n.} 
-%\ditem{External parameter} \textit{-v.} 
+%\ditem{External parameter} \textit{-n.} 
 \ditem{Expected Value} [Valor Esperado] \textit{-n.} Es el valor predicho de una variable y corresponde a la suma del valor de cada observación multiplicada por la probabilidad de su ocurrencia.
 
 Matemáticamente, si $x$ representa el valor de la variable $X$ y $p(x)$ es su probabilidad de ocurrencia, el valor esperado de $X$ se define como,
@@ -210,7 +210,7 @@ Cuando un algoritmo de aprendizaje automático produce predicciones cuyo  valor 
 \section{F}
 \ditem{Feature} [Característica] \textit{-n.} Es el valor de una propiedad particular asociada a un fenómeno, el cual puede ser observable o escondido (latente). Ejemplos de características observables incluyen los pixeles de una imagen, las frecuencias de un audio, las palabras de un texto, o incluso las conexiones en una red social. Una característica latente es el valor de salida (activación) de una neurona dentro de una capa. 
 
-Al proceso de escoger o crear características que sean estadísticamente informativas, no muestren redundancia, y discriminen correctamente se le denomina \textit{feature engineering} (ingeniería de características) y es muy importante para obtener modelos de \textit{regresión}, \textit{clasificación}, y \textit{clustering} que funcionen de forma más exacta y sean robusta al ruido. 
+Al proceso de escoger o crear características que sean estadísticamente informativas, no muestren redundancia, y discriminen correctamente se le denomina \textit{feature engineering} (ingeniería de características) y es muy importante para obtener modelos de \textit{regresión}, \textit{clasificación}, y \textit{clustering} que funcionen de forma más exacta y sean robustos al ruido. 
 
 La salida de un modelo también se le puede usar como una característica y se le denomina \textit{meta-data}.
 \ditem{Feature Vector}  [Vector de Características] \textit{-n.} Es el conjunto de distintas características (ref. Feature) asociadas al mismo fenómeno. 
@@ -232,37 +232,37 @@ $$f(x) = f(x_0) + \nabla{f(x_0)} \cdot (x - x_0)$$
 
 para un $x$ muy cercano a $x_0$
 \ditem{Gradient Ascent} \textit{-n.} Es una técnica de optimización matemática que actualiza sucesivamente las variable entrenables de un modelo en la dirección de la gradiente de una función objetivo con el objetivo de encontrar el máximo de tal función. 
-\ditem{Gradient Descent} \textit{-n.} Es una técnica de optimización matemática que itera en la dirección opuesta a la gradiente para encontrar mínimos locales de una función de costo. La actualización de los pesos de una red neuronal $\theta$ usando \textit{-gradient descent} tiene la siguiente forma: 
+\ditem{Gradient Descent} \textit{-n.} Es una técnica de optimización matemática que itera en la dirección opuesta a la gradiente para encontrar mínimos locales de una función de costo. La actualización de los pesos de una red neuronal $\theta$ usando \textit{gradient descent} tiene la siguiente forma: 
 $$\theta = \theta - \alpha \nabla J(\theta)$$ 
 donde la función $L(\theta)$ es una medida de error de predicción asociada a la red neuronal (ref. Loss function) y $\alpha$ es la velocidad de aprendizaje (ref. Learning rate).
 
 \section{H}
-\ditem{Hidden Layer} [Capa Escondida] \textit{-v.} Una capa de neuronas dentro de la arquitectura de una red neuronal que no está expuesta a los datos de entrada ni a los datos de salida.
+\ditem{Hidden Layer} [Capa Escondida] \textit{-n.} Una capa de neuronas dentro de la arquitectura de una red neuronal que no está expuesta a los datos de entrada ni a los datos de salida.
 
 \ditem{Hill Climbing} \textit{-n.} Es un algoritmo de optimización que estima los valores de los parámetros entrenables de un modelo, por ejemplo los pesos de una red neuronal. \textit{Hill Climbing} añade sucesivamente una pequeña cantidad de ruido con el fin de proponer un modelo que de un mejor rendimiento y optimice una función objetivo. Si tal cambio produce una mejor solución, otro cambio incremental se produce encima de la nueva solución hasta que no se encuentren mejoras sucesivas. 
-%\ditem{Hypothesis testing} \textit{-v.}  
+%\ditem{Hypothesis testing} \textit{-n.}  
 \ditem{Hyper-Parameter} [Híper-Parámetro] \textit{-n.} Son los parámetros externos a un modelo de aprendizaje automático cuyos valores no se calculan mediante un proceso de optimización matemática sino a través de una búsqueda manual o heurística. Ejemplos de híper-parámetros incluyen el número de capas escondidas, la velocidad de aprendizaje, y el rango de los valores de inicialización de los pesos de una red neuronal.
 
-Usualmente se ajusta los híper-parámetros calculando los valores que resultan en una rendimiento óptimo del modelo en un subconjunto del dataset llamado dataset de validación. 
+Usualmente se ajusta los híper-parámetros calculando los valores que resultan en una rendimiento óptimo del modelo en un subconjunto de los datos llamado el \textit{dataset de validación}. 
 \section{I}
 \ditem{Inference} [Inferencia] \textit{-n.} Es el proceso de obtener hipótesis en base a evidencia o conclusiones lógicas. 
 
-En redes neuronales, este paso corresponde a la predicción realizada por un modelo entrenado para saber a que clase le pertenece una observación en los datasets de testing o validación. Los tipos de inferencia incluyen: deducción, inducción, y abducción. 
+En redes neuronales, este paso corresponde a la predicción realizada por un modelo entrenado para saber a que clase le pertenece una observación en los datasets de \textit{testing} o validación. Los tipos de inferencia incluyen: deducción, inducción, y abducción. 
 \section{J}
 \section{K}
 \ditem{Kernel} \textit{-n.} Es una función que pondera los datos de entrada de una señal durante la operación de convolución (ref. Convolution). 
 
 Estadísticamente, es un función de densidad probabilística que normaliza los valores de una variable.
 \section{L}
-\ditem{Label} [Etiqueta] \textit{-v.}  Es el valor real asignado a una observación en un dataset (ref. dataset). A menudo cada observación posee una etiqueta la cual ha sido otorgada por una persona después de observar sus características (ref. Feature). Por ejemplo, a los pixeles de una imágenes se les puede otorgar una etiqueta que indica el objeto que representan. Para reducir la subjetividad en su definición, se suele pedir a varias personas que definan una etiqueta para la misma observación y así obtener más robustez en su definición. La clasificación de observaciones que contienen más de una etiqueta al mismo tiempo, se le denomina \textit{multi-label classification}.  
-\ditem{Learning} [Aprendizaje] \textit{-v.}  Es el proceso de actualizar los parámetros entrenables de un modelo matemático o estadístico con el fin de optimizar una función objetivo (Ref. Loss Function) y de esa manera resolver una tarea determinada (e.g., clasificación, regresión, clustering). En el caso de las redes neuronales, los parámetros entrenables son los pesos entre las neuronas y el aprendizaje se da a través de un proceso iterativo que actualiza los pesos con el objetivo de minimizar una métrica de error o \textit{loss function}. 
+\ditem{Label} [Etiqueta] \textit{-n.}  Es el valor real asignado a una observación en un dataset (ref. dataset). A menudo cada observación posee una etiqueta la cual ha sido otorgada por una persona después de observar sus características (ref. Feature). Por ejemplo, a los pixeles de una imágenes se les puede otorgar una etiqueta que indica el objeto que representan. Para reducir la subjetividad en su definición, se suele pedir a varias personas que definan una etiqueta para la misma observación y así obtener más robustez en su definición. La clasificación de observaciones que contienen más de una etiqueta al mismo tiempo, se le denomina \textit{multi-label classification}.  
+\ditem{Learning} [Aprendizaje] \textit{-n.}  Es el proceso de actualizar los parámetros entrenables de un modelo matemático o estadístico con el fin de optimizar una función objetivo (Ref. Loss Function) y de esa manera resolver una tarea determinada (e.g., clasificación, regresión, \textit{clustering}). En el caso de las redes neuronales, los parámetros entrenables son los pesos entre las neuronas y el aprendizaje se da a través de un proceso iterativo que actualiza los pesos con el objetivo de minimizar una métrica de error o \textit{loss function}. 
 \ditem{Learning Rate} [Velocidad de Aprendizaje] \textit{-n.} Es un híper-parámetro (ref. Hyper-Parameter) que representa el ratio con el cual se modifican los pesos de una red neuronal. Mientras un \textit{learning rate} actualiza rápidamente los pesos, puede no converger en un mínimo local adecuado. Por otro lado, un valor muy bajo puede hacer que el entrenamiento converja lentamente, pero también dejar de explorar otras regiones del espacio de solución que podrían minimizar la función de costo (ref. Loss Function). 
 
 Se le representa con la letra $
 \alpha$  y usualmente se define como una función del tiempo con la idea de disminuir su valor mientras el entrenamiento se desarrolla. 
 %\ditem{Learning to Act} \textit{-n.}  Un algoritmo que aprende a controlar políticas en un ambiente total o parcialmente observable
 %\ditem{Likelihood} \textit{-n.} 
-\ditem{Linear Kernel} [Kernel Lineal] \textit{-n.} Un kernel lineal es la simple suma de la multiplicación de cada una de las entradas de dos vectores de igual tamaño. El termino matemático para esto se le llama producto punto y también se le define como el coseno del ángulo de dos vectores multiplicado por el producto de sus longitudes.
+\ditem{Linear Kernel} [Kernel Lineal] \textit{-n.} Un \textit{kernel} lineal es la simple suma de la multiplicación de cada una de las entradas de dos vectores de igual tamaño. El termino matemático para esto se le llama producto punto y también se le define como el coseno del ángulo de dos vectores multiplicado por el producto de sus longitudes.
 \ditem{Long Short-Term Memory (LSTM)} \textit{-n.} Es un tipo de red neuronal recurrente (ref. Recurrent Neural Network) que resuelve explícitamente el problema del desvanecimiento de gradientes (\textit{vanishing gradients}) mediante el uso de compuertas entrenables que controlan el flujo de gradientes dentro de una unidad de procesamiento. Esto se realiza mediante un conjunto de operaciones sobre la memoria interna de cada unidad. Por ejemplo, LSTM puede aprender a escribir, leer, y sobrescribir patrones en la memoria utilizando compuertas llamadas \textit{input} (entrada), \textit{output} (salida), and \textit{forget} (olvido), respectivamente.
 
 A diferencia de otros modelos como RNN y HMM, que también representan dependencias temporales, LSTM no suele ser sensible a la presencia de intervalos entre patrones dentro de largas señales de entrada, de ahí el termino \textit{long-term} (largo-plazo). 
@@ -274,14 +274,14 @@ Un método común para medir esta discrepancia es el denominado error cuadrado: 
 \ditem{Mapping} \textit{-n.} Transformación matemática que consiste en llevar los datos a una espacio en donde ciertas propiedades se cumplen. Por ejemplo, que cada dimensión sea ortogonal o que la separación entre clases sea más larga.
 \ditem{Memory} [Memoria] \textit{-n.}  Conjunto de pesos de una red neuronal que se activan de forma similar en presencia de la misma observación.
 %\ditem{Meta-learning} \textit{-n.}  Es el escenario en donde un agente aprende en por lo menos dos niveles o escalas de tiempo. Debido a estos dos niveles de organizacion, también se le denomina "learning to learn".
-\ditem{Multi-Layer Perceptron (MLP)} [Red Neuronal Multi-capa] \textit{-n.}  Es un tipo de red neuronal que esta organizada en una capa de entrada, una o mas capas escondidas, y una capa de salida. Las capas de esta red neuronal se conectadan a través de \textit{sinapsis}, cada una asociada a un valor numérico llamado \textit{peso} que representa su intensidad. 
+\ditem{Multi-Layer Perceptron (MLP)} [Red Neuronal Multi-capa] \textit{-n.}  Es un tipo de red neuronal que esta organizada en una capa de entrada, una o mas capas escondidas, y una capa de salida. Las capas de esta red neuronal se conectan a través de sus sinapsis, cada una asociada a un valor numérico llamado peso y que representa su intensidad. 
 
 Un MLP se utiliza principalmente como un clasificador con el fin de aprender un espacio matemático donde la representación de los datos de entrada es fácilmente separable en clases. Debido a su capacidad de aproximar funciones muy complejas, se les denomina aproximadores universal de funciones (\textit{universal function approximators}) 
 
-Cada capa de un MLP es un conjunto de neuronas que propagan la señal hacia la siguiente capa, creando nuevas representaciones, y finalmente proyectándolas a la capa de salida, la cual tiene un numero de neuronas igual al numero de clases a aprender. El valor optimo de los pesos de una de un MLP se realiza ajustando los pesos mediante la técnica llamada back propagation (ref. Back Propagation).
+Cada capa de un MLP es un conjunto de neuronas que propagan la señal hacia la siguiente capa, creando nuevas representaciones, y finalmente proyectándolas a la capa de salida, la cual tiene un numero de neuronas igual al numero de clases a aprender. El valor optimo de los pesos de una de un MLP se realiza ajustando los pesos mediante la técnica llamada \textit{back propagation} (ref. Back Propagation).
 
 
-%\ditem{Model free} \textit{-v.} 
+%\ditem{Model free} \textit{-n.} 
 \section{N}
 \ditem{Neural Networks} [Redes Neuronales] \textit{-n.}  Un modelo matemático cuya arquitectura contiene varias capas de neuronas las cuales construyen progresivamente representaciones más abstractas de información directamente desde los datos de entrada. 
 \section{O}
@@ -290,10 +290,10 @@ Cada capa de un MLP es un conjunto de neuronas que propagan la señal hacia la s
 
 La lógica de esta heurística es que si la optimización de modelos de aprendizaje suele ser no-convexa, entonces siempre existirán modelos más complejos, y menos interpretables, que provean resultados similares. Ante la existencia de alternativas más complejas, se elige los modelos más simples debido a que sus desempeños son más fáciles de evaluar o consumen una menor cantidad de recursos.
 \ditem{Optimization} [Optimización] \textit{-n.} Es la elección del mejor conjunto de parámetros entrenables de un modelo con el fin de maximizar su función objetivo (ref. Objective Function).  
-%\ditem{Off-policy} \textit{-v.} 
+%\ditem{Off-policy} \textit{-n.} 
 \section{P}
 \ditem{Parameters} [Parámetros] \textit{-n.}  Valores que influyen en el comportamiento y desempeño de un modelo entrenable. Por ejemplo, los parámetros de una red neuronal son sus pesos.
-\ditem{Perceptron} \textit{-v.} Es un clasificador que aprende a categorizar entre dos clases (0 y 1) multiplicando un peso por cada dimensión de los datos de entrada y le suma a esta operación una constante llamada \textit{bias} que mueve la decisión lejos del origen. 
+\ditem{Perceptron} [Perceptrón] \textit{-n.} Es un clasificador que aprende a categorizar entre dos clases (0 y 1) multiplicando un peso por cada dimensión de los datos de entrada y le suma a esta operación una constante llamada \textit{bias} que mueve la decisión lejos del origen. 
 Si los datos de entrada son $x$, los pesos del pesos del \textit{perceptron} son $w$ y el termino \textit{bias} es $b$, el \textit{perceptron} retornará 1 si $$w \cdot x +b>0$$ y 0 en caso contrario.
 \ditem{Precision} [Precisión] \textit{-n.} Aunque se suele utilizar comúnmente como sinónimo de exactitud, su definición es diferente en el contexto del método científico. La precisión es el grado de similaridad entre las predicciones correctas otorgadas por un modelo de aprendizaje automático. Si estas predicciones muestran variabilidad entre ellas, el modelo no será preciso. 
 
@@ -318,7 +318,7 @@ Entrenar este tipo de modelos puede presentar complicaciones cuando se memorizan
 
 \ditem{Reinforcement Learning} [Aprendizaje por Refuerzo] \textit{-n.}  Conjunto de algoritmos que entrenan a un agente a interactuar con un ambiente a través de una secuencia de estados , acciones, y premios (\textit{rewards}). El agente es entrenado con el objetivo de maximizar el valor acumulado de futuros \textit{rewards} durante la secuencia de acciones que suceden durante un episodio.
 \section{S}
-%\ditem{Sum of squared errors} \textit{-v.} 
+%\ditem{Sum of squared errors} \textit{-n.} 
 %\ditem{Sigmoid function} [Función Sigmoidea] \textit{-n.} 
 \ditem{Softmax}  \textit{-n.} Es una funcion de activacion (ref. Activation Function) que a menudo se coloca en la capa de salida de una red neuronal. Dada una capa de una red neuronal, la funcion \textit{Softmax} normaliza cada valor entre 0.0 y 1.0 con la condicion que la suma de estos valores sea 1.0. El resultado en un vector que representa la probabilidad de que un dato de entrada pertenezca a cada clase disponible con cierto nivel de probabilidad.
 
@@ -335,7 +335,7 @@ Cuando un proceso es estocástico, se dice que es un proceso aleatorio (\textit{
 
 Los parámetros entrenables $\theta$ de dicha función $f(x, \theta)=y$ son ajustados en un proceso llamado entrenamiento (ref. Training), el cual calcula la correspondencia matemática entre los elementos de entrada $x$ y las etiquetas $y$. Estadísticamente, en algoritmos como las Redes Neuronales, esta relación toma la forma de la probabilidad condicional de las etiquetas dado los valores de entrada y parámetros entrenados, $P(y|x, \theta^*)$ también llamado \textit{likelihood}; mientras que en el caso de las Redes Bayesianas, dicha relación se aproxima mediante la probabilidad conjunta entre estos elementos $P(x, y,  \theta^*)$.
 
-La predicción de nuevos elementos de entrada $x'$ es simplemente la ejecución de la función $f(x', \theta^*)$, ya con sus parámetros entrenados $\theta^*$. El resultado es una distribución sobre el conjunto de etiquetas, cuyo valor maximo representa la predicción de que clase le corresponde a $x'$. Este proceso de inferencia en base a evidencias tiene similitud al proceso de generalizacion que sucede en el cerebro humano (ref. Generalization)
+La predicción de nuevos elementos de entrada $x'$ es simplemente la ejecución de la función $f(x', \theta^*)$, ya con sus parámetros entrenados $\theta^*$. El resultado es una distribución sobre el conjunto de etiquetas, cuyo valor máximo representa la predicción de que clase le corresponde a $x'$. Este proceso de inferencia en base a evidencias tiene similitud al proceso de generalización que sucede en el cerebro humano (ref. Generalization)
 \section{T}
 %\ditem{Tanh Function} \textit{-n.}
 \ditem{Training} [Entrenamiento] \textit{-n.}  Actualización iterativa de los parámetros entrenables de un modelo de aprendizaje automático en la dirección en la cual la función de error se minimiza.
@@ -343,7 +343,9 @@ La predicción de nuevos elementos de entrada $x'$ es simplemente la ejecución 
 \section{U}
 \ditem{Unsupervised Learning} [Aprendizaje No Supervisado] \textit{-n.} Es un tipo de  aprendizaje que no requiere el etiquetado de observaciones y que funciona en base a identificar la presencia de relaciones entre grupos de observaciones. Tales relaciones pueden incluir las medidas de similaridad, densidad, asociación, o jerarquía entre las observaciones.
 \section{V}
-\ditem{Variance} [Varianza] \textit{-n.} Un algoritmo de aprendizaje supervisado tiene un alto \textit{variance} cuando predice distintos resultados para diferentes \textit{datasets} de entrenamiento. 
+\ditem{Variance} [Varianza] \textit{-n.} Un algoritmo de aprendizaje supervisado tiene un alto \textit{variance} cuando predice distintos resultados para diferentes \textit{datasets}. 
+
+Por ejemplo, si un modelo entrenado exhibe una exactitud muy diferente para \textit{datasets} de entrenamiento y validación, entonces se dice que muestra un alto \textit{variance}.
 %\ditem{Variational Auto Encoder} \textit{-n.} 
 \section{W}
 \ditem{Weights} [Pesos] \textit{-n.} En una red neuronal artificial, un peso corresponde al valor de la sinapsis entre dos neuronales y representa el nivel de activación de la neurona en presencia de sus datos de entrada.  
@@ -356,5 +358,3 @@ Los pesos son usualmente los valores entrenables de una red neuronal.
 \end{description}
 \end{multicols}
 \end{document}
-
-

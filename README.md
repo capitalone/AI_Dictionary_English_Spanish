@@ -19,6 +19,7 @@ This work is distributed under [The Creative Commons license](https://creativeco
 Hope you find it useful. 
 
 **Omar U. Florez, PhD**
+
 Conversational AI @ Capital One
 
 December of 2018

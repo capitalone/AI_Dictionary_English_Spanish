@@ -20,7 +20,7 @@ Hope you find it useful.
 
 **Omar U. Florez, PhD**
 
-Conversational AI @ Capital One
+**Conversational AI @ Capital One**
 
 December of 2018
 

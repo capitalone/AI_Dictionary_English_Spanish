@@ -1,3 +1,5 @@
+# Due to changes in the priorities, this project is currently not being supported. The project is archived as of 9/17/21 and will be available in a read-only state. Please note, since archival, the project is not maintained or reviewed. #
+
 ## AI Dictionary
 
 A major part of knowledge related to **Artificial Intelligence** is only available in English. **This prevents information and recent discoveries from being equally shared among Spanish and non-Spanish speakers**. 
